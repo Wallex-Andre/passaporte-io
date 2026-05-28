@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,14 +19,27 @@
             </a>
         </div>
 
-        <div class="flex gap-2">
-            <a href="#" class="btn btn-ghost">
-                Login
-            </a>
+        <div class="flex items-center gap-2">
+            @auth
+                <span class="text-sm text-base-content/70">
+                    {{ Auth::user()->name }} · {{ Auth::user()->role }}
+                </span>
 
-            <a href="#" class="btn btn-primary">
-                Criar conta
-            </a>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-ghost">
+                        Sair
+                    </button>
+                </form>
+            @else
+                <a href="{{ route('login') }}" class="btn btn-ghost">
+                    Login
+                </a>
+
+                <a href="{{ route('register') }}" class="btn btn-primary">
+                    Criar conta
+                </a>
+            @endauth
         </div>
     </div>
 
@@ -46,4 +60,5 @@
     </main>
 
 </body>
+
 </html>
