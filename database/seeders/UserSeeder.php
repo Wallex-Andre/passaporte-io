@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Organizador Teste',
                 'role' => 'organizador',
-                'password' => Hash::make('12345678'),
+                'password' => Hash::make('Passaporte@2026'),
             ]
         );
 
@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Participante Teste',
                 'role' => 'participante',
-                'password' => Hash::make('12345678'),
+                'password' => Hash::make('Passaporte@2026'),
             ]
         );
     }
