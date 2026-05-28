@@ -18,3 +18,13 @@ Route::middleware('guest')->group(function () {
 Route::post('/logout', [AuthController::class, 'logout'])
     ->middleware('auth')
     ->name('logout');
+
+
+
+Route::get('/admin', function () {
+    return 'Painel do organizador';
+})->middleware(['auth', 'role:organizador'])->name('admin.dashboard');
+
+Route::get('/teste-participante', function () {
+    return 'Área permitida para participante';
+})->middleware(['auth', 'role:participante'])->name('participant.test');
