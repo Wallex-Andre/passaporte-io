@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\EventController;
 
 Route::get('/', function () {
     return view('home');
@@ -18,3 +19,10 @@ Route::middleware('guest')->group(function () {
 Route::post('/logout', [AuthController::class, 'logout'])
     ->middleware('auth')
     ->name('logout');
+
+Route::prefix('admin')
+    ->middleware(['auth', 'role:organizador'])
+    ->name('admin.')
+    ->group(function () {
+        Route::resource('events', EventController::class)->except(['show']);
+});

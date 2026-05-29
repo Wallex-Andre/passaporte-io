@@ -25,6 +25,12 @@
                     {{ Auth::user()->name }} · {{ Auth::user()->role }}
                 </span>
 
+                @if (Auth::user()->role === 'organizador')
+                    <a href="{{ route('admin.events.index') }}" class="btn btn-ghost">
+                        Meus eventos
+                    </a>
+                @endif
+
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button type="submit" class="btn btn-ghost">
