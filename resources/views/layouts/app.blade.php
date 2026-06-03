@@ -31,6 +31,12 @@
                     </a>
                 @endif
 
+                @if (Auth::user()->role === 'participante')
+                    <a href="{{ route('enrollments.index') }}" class="btn btn-ghost">
+                        Minhas inscrições
+                    </a>
+                @endif
+
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button type="submit" class="btn btn-ghost">
