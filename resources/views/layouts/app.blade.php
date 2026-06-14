@@ -57,20 +57,34 @@
 
     <main class="container mx-auto px-4 py-8">
         @if (session('success'))
-            <div class="alert alert-success mb-6">
+            <div class="flash-message alert alert-success mb-4 transition-opacity duration-500">
                 <span>{{ session('success') }}</span>
             </div>
         @endif
 
         @if (session('error'))
-            <div class="alert alert-error mb-6">
+            <div class="flash-message alert alert-error mb-4 transition-opacity duration-500">
                 <span>{{ session('error') }}</span>
             </div>
         @endif
 
         @yield('content')
     </main>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const messages = document.querySelectorAll('.flash-message');
 
+        messages.forEach(function (message) {
+            setTimeout(function () {
+                message.classList.add('opacity-0');
+
+                setTimeout(function () {
+                    message.remove();
+                }, 500);
+            }, 5000);
+        });
+    });
+</script>
 </body>
 
 </html>

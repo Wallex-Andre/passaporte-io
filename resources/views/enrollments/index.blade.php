@@ -62,15 +62,21 @@
                                     </td>
 
                                     <td>
-                                        <form action="{{ route('enrollments.destroy', $event) }}" method="POST"
-                                            onsubmit="return confirm('Tem certeza que deseja cancelar esta inscrição?')">
-                                            @csrf
-                                            @method('DELETE')
+                                        <div class="flex flex-col sm:flex-row gap-2">
+                                            <a href="{{ route('events.show', $event) }}" class="btn btn-sm btn-primary">
+                                                Ver detalhes
+                                            </a>
 
-                                            <button type="submit" class="btn btn-sm btn-error">
-                                                Cancelar
-                                            </button>
-                                        </form>
+                                            <form action="{{ route('enrollments.destroy', $event) }}" method="POST"
+                                                onsubmit="return confirm('Tem certeza que deseja cancelar esta inscrição?')">
+                                                @csrf
+                                                @method('DELETE')
+
+                                                <button type="submit" class="btn btn-sm btn-error w-full sm:w-auto">
+                                                    Cancelar
+                                                </button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach

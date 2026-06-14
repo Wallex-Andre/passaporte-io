@@ -4,10 +4,11 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\EnrollmentController;
+use App\Http\Controllers\PublicEventController;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [PublicEventController::class, 'index'])->name('home');
+
+Route::get('/events/{event}', [PublicEventController::class, 'show'])->name('events.show');
 
 Route::middleware('guest')->group(function () {
     Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
