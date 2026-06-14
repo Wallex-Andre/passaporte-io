@@ -28,6 +28,40 @@ A aplicação possui três formas principais de acesso:
 
 ---
 
+## Demonstração
+
+### Vídeo de apresentação
+
+O vídeo apresenta o funcionamento geral do **Passaporte.io**, incluindo a vitrine pública, o painel do organizador, o fluxo de inscrição do participante e os principais trechos do código.
+
+[![Assista ao vídeo de demonstração](docs/screenshots/video-thumbnail.png)](https://drive.google.com/file/d/1SG6qLDPATH5HhQK24sh0ofvEAEXH740M/view?usp=sharing)
+
+> Clique na imagem acima para assistir ao vídeo de demonstração do projeto.
+
+### Prints do sistema
+
+#### Vitrine pública de eventos
+
+![Vitrine pública de eventos](docs/screenshots/01-home-vitrine.png)
+
+#### Página de detalhes do evento
+
+![Página de detalhes do evento](docs/screenshots/02-detalhes-evento.png)
+
+#### Área do organizador
+
+![Área do organizador](docs/screenshots/03-area-organizador.png)
+
+#### Formulário de cadastro de evento
+
+![Formulário de cadastro de evento](docs/screenshots/04-formulario-evento.png)
+
+#### Minhas inscrições
+
+![Tela de minhas inscrições](docs/screenshots/05-minhas-inscricoes.png)
+
+---
+
 ## Tecnologias utilizadas
 
 * PHP
