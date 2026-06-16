@@ -123,10 +123,10 @@ O vídeo apresenta o funcionamento geral do **Passaporte.io**, incluindo a vitri
 
 ## Tecnologias utilizadas
 
-* PHP
+* PHP 8.4
 * Laravel
 * Composer
-* MySQL
+* MySQL local e MySQL no Railway
 * Blade
 * DaisyUI
 * Tailwind CSS
@@ -134,6 +134,7 @@ O vídeo apresenta o funcionamento geral do **Passaporte.io**, incluindo a vitri
 * Laravel Migrations
 * Laravel Seeders
 * Laravel Storage
+* Railway
 
 ---
 
