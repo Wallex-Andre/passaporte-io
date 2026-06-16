@@ -30,6 +30,65 @@ A aplicação possui três formas principais de acesso:
 
 ## Demonstração
 
+## Acesso online
+
+O sistema também foi publicado na plataforma Railway, permitindo o acesso online ao projeto sem necessidade de instalação local.
+
+**Link do projeto em produção:**
+
+https://passaporte-io-production.up.railway.app
+
+### Ambiente de produção
+
+O deploy foi realizado utilizando:
+
+* Railway para hospedagem da aplicação;
+* MySQL no Railway como banco de dados;
+* PHP 8.4;
+* Node.js para build dos arquivos front-end;
+* Laravel em ambiente de produção.
+
+Durante a publicação, foram configuradas variáveis de ambiente para conexão com o banco de dados, URL da aplicação, chave da aplicação Laravel e ambiente de produção.
+
+### Banco de dados em produção
+
+O banco de dados MySQL foi configurado no Railway e as migrations foram executadas com seeders para criação das tabelas e dados iniciais do sistema.
+
+Comando utilizado no ambiente de produção:
+
+```bash
+php artisan migrate:fresh --seed --force
+```
+
+Também foi verificado o link simbólico de armazenamento público:
+
+```bash
+php artisan storage:link
+```
+
+### Usuários para teste
+
+O sistema possui usuários iniciais criados via seeder para facilitar a demonstração das funcionalidades.
+
+**Organizador**
+
+```txt
+E-mail: organizador@passaporte.io
+Senha: Passaporte@2026
+```
+
+**Participante**
+
+```txt
+E-mail: participante@passaporte.io
+Senha: Passaporte@2026
+```
+
+### Observação sobre o ambiente online
+
+A aplicação está hospedada em ambiente gratuito/temporário do Railway, portanto a disponibilidade pode depender dos limites da plataforma.
+
+
 ### Vídeo de apresentação
 
 O vídeo apresenta o funcionamento geral do **Passaporte.io**, incluindo a vitrine pública, o painel do organizador, o fluxo de inscrição do participante e os principais trechos do código.
